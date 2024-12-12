@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Medcare</title>
+    <link rel="shortcut icon" href="image/heartbeat-solid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        /* Background Video */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.8; /* Adjust opacity for better visibility of text */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video class="background-video" autoplay loop muted>
+        <source src="video/medical-background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="container">
+        <img src="image/heartbeat-solid.svg" alt="Medcare Logo" class="icon">
+        <h1>Welcome to Medcare</h1>
+        <p>Your one-stop solution for medical consultations and health management. Choose your role to proceed and access personalized services tailored to your needs.</p>
+        
+        <button class="btn" onclick="location.href='patient.html'">I am a Patient</button>
+        <button class="btn" onclick="location.href='doctor.html'">I am a Doctor</button>
+        
+        <div class="footer">
+            <p>&copy; 2024 Medcare. All rights reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>

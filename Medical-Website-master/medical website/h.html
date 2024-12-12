@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Icon Button</title>
+    <style>
+        /* Hide the file input button */
+        #imageUpload {
+            display: none;
+        }
+        
+        /* Style the image icon as a button */
+        .upload-icon {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            transition: 0.3s;
+        }
+        
+        .upload-icon:hover {
+            border-color: #aaa;
+            box-shadow: 0px 0px 5px #aaa;
+        }
+        
+        /* Image preview styling */
+        #preview {
+            max-width: 300px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload an Image</h2>
+
+    <!-- Image icon acting as upload button -->
+    <label for="imageUpload">
+        <img src="upload-icon.png" alt="Upload Icon" class="upload-icon">
+    </label>
+    
+    <!-- Hidden file input element -->
+    <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+
+    <!-- Display the selected image -->
+    <div id="imagePreview">
+        <img id="preview" alt="Image Preview">
+    </div>
+
+    <script>
+        // JavaScript function to preview the uploaded image
+        function previewImage(event) {
+            const image = document.getElementById('preview');
+            image.src = URL.createObjectURL(event.target.files[0]);
+            image.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

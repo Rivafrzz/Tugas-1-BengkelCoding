@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Email Verification</title>
+
+    <style>
+      /* General styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:#16a085;
+        padding: 0 10px;
+        overflow: hidden;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        animation: fadeIn 1s ease;
+      }
+
+      /* Container styles */
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        min-height: 600px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        animation: slideIn 1s ease-out;
+        padding: 2rem;
+      }
+
+      .forms-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
+
+      .input-field {
+        max-width: 400px;
+        width: 100%;
+        background-color: #f0f0f0;
+        margin: 15px 0;
+        height: 55px;
+        border-radius: 50px;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        padding: 0 1rem;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .input-field i {
+        text-align: center;
+        line-height: 55px;
+        color: #acacac;
+        font-size: 1.5rem;
+      }
+
+      .input-field input {
+        background: none;
+        outline: none;
+        border: none;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+      }
+
+      .input-field input::placeholder {
+        color: #aaa;
+        font-weight: 500;
+      }
+
+      .btn {
+        width: 120px;
+        background-color: #16a085;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 0;
+        font-size: 1.1rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 10px 20px rgba(21, 189, 141, 0.3);
+      }
+
+      .btn:hover {
+        background-color: #16a085;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(40, 110, 94, 0.5);
+      }
+
+      .button-row {
+        display: flex;
+        gap: 10px; /* Brings the buttons closer together */
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .resend-text {
+        margin-top: 10px;
+        color: #999;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .resend-text a {
+        color: #16a085;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .resend-text a:hover {
+        text-decoration: underline;
+      }
+
+      .panels-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image {
+        width: 100%;
+        max-width: 300px;
+        animation: bounce 2s infinite;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        0% {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 870px) {
+        .container {
+          flex-direction: column;
+          padding: 2rem;
+        }
+
+        .panels-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="email-verification-form">
+          <form action="#" class="verify-email-form" id="verification-form">
+            <h2 class="title">Verify Your Email</h2>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="text"
+                id="verification-code"
+                placeholder="Enter verification code"
+                required
+              />
+            </div>
+
+            <div class="button-row">
+              <input type="submit" value="Verify" class="btn solid" />
+              <a href="signup.html">
+                <button type="button" class="btn solid">Sign up</button>
+              </a>
+            </div>
+
+            <p class="resend-text">
+              Didn't receive a code? <a href="#" id="resend-link">Resend</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <img src="./image/login.svg" class="image" alt="Verified Email" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Basic form validation and behavior
+      const form = document.getElementById("verification-form");
+      const verificationCodeInput = document.getElementById("verification-code");
+      const resendLink = document.getElementById("resend-link");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const verificationCode = verificationCodeInput.value.trim();
+        if (verificationCode === "") {
+          alert("Please enter a valid verification code.");
+          return;
+        }
+
+        // Simulate verification
+        alert("Verification successful!");
+        window.location.href = "registrationDoctor.html"; // Redirect to sign-in page
+      });
+
+      // Resend verification code simulation
+      resendLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("A new verification code has been sent to your email.");
+      });
+    </script>
+  </body>
+</html>

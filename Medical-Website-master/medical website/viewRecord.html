@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare | View Records</title>
+
+    <!-- Page Icon -->
+    <link rel="shortcut icon" href="image/heartbeat-solid.svg" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+       
+        .view-records {
+            flex: 1;
+            padding: 4rem 2rem;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 60%;
+            padding: 0.8rem;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-btn {
+            padding: 0.8rem 1.2rem;
+            background-color: #16a085;
+            border-radius: 0 4px 4px 0;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .records-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .record {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .record h3 {
+            margin-top: 0;
+        }
+
+        .btn {
+            margin-top: auto;
+            padding: 0.5rem 1rem;
+            background-color: #16a085;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #13876b;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #444;
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i> Medicare</a>
+        <nav class="navbar">
+            <a href="doctorHomepage.html#home">Home</a>
+            <a href="doctorHomepage.html#services">Services</a>
+            <a href="doctorHomepage.html#dashboard">Dashboard</a>
+            <a href="doctorHomepage.html#patients">Patients</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </div>
+
+    <section class="view-records" id="records">
+        <h1 class="heading">Patient <span>Records</span></h1>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search by patient name or ID..." class="search-input">
+            <button class="btn search-btn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="records-container">
+            <div class="record">
+                <h3>James Anson</h3>
+                <p><strong>Patient ID:</strong> #00124</p>
+                <p><strong>Last Visit:</strong> Oct 15, 2024</p>
+                <p><strong>Diagnosis:</strong> Hypertension</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+
+            <div class="record">
+                <h3>Emily Davis</h3>
+                <p><strong>Patient ID:</strong> #00125</p>
+                <p><strong>Last Visit:</strong> Oct 12, 2024</p>
+                <p><strong>Diagnosis:</strong> Type 2 Diabetes</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+
+            <div class="record">
+                <h3>Leo Abbott</h3>
+                <p><strong>Patient ID:</strong> #00126</p>
+                <p><strong>Last Visit:</strong> Oct 10, 2024</p>
+                <p><strong>Diagnosis:</strong> Asthma</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+
+            <div class="record">
+                <h3>Sarah Miller</h3>
+                <p><strong>Patient ID:</strong> #00127</p>
+                <p><strong>Last Visit:</strong> Oct 9, 2024</p>
+                <p><strong>Diagnosis:</strong> Migraine</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+
+            <div class="record">
+                <h3>John Doe</h3>
+                <p><strong>Patient ID:</strong> #00128</p>
+                <p><strong>Last Visit:</strong> Oct 5, 2024</p>
+                <p><strong>Diagnosis:</strong> High Cholesterol</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+
+            <div class="record">
+                <h3>Alice Johnson</h3>
+                <p><strong>Patient ID:</strong> #00129</p>
+                <p><strong>Last Visit:</strong> Oct 2, 2024</p>
+                <p><strong>Diagnosis:</strong> Seasonal Allergies</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+
+            <div class="record">
+                <h3>Michael Brown</h3>
+                <p><strong>Patient ID:</strong> #00130</p>
+                <p><strong>Last Visit:</strong> Oct 1, 2024</p>
+                <p><strong>Diagnosis:</strong> Depression</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+
+            <div class="record">
+                <h3>Anna Smith</h3>
+                <p><strong>Patient ID:</strong> #00131</p>
+                <p><strong>Last Visit:</strong> Sep 29, 2024</p>
+                <p><strong>Diagnosis:</strong> GERD</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+
+            <div class="record">
+                <h3>David Wilson</h3>
+                <p><strong>Patient ID:</strong> #00132</p>
+                <p><strong>Last Visit:</strong> Sep 25, 2024</p>
+                <p><strong>Diagnosis:</strong> Anemia</p>
+                <a href="#" class="btn">View Report</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>&copy; 2024 Medicare. All rights reserved.</p>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
